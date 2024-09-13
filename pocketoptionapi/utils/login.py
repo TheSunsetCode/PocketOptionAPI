@@ -1,6 +1,7 @@
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver import Chrome
 from selenium.webdriver.ie.service import Service
+import time
 
 class Login:
     def __init__(self) -> None:
@@ -8,3 +9,7 @@ class Login:
         self.driver = Chrome(service=self.service)
     def login(self, username, password, url: str = "https://pocketoption.com/en/login", is_login_with_google: bool = False):
         self.driver.get(url)
+        
+        time.sleep(5)
+
+        
